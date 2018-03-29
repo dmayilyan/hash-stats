@@ -16,7 +16,7 @@ def get_hash(filename):
     return md5.hexdigest()
 
 
-def to_hist(file_hash):
+def to_dict(file_hash):
     for l in file_hash:
         if l in let_dict:
             let_dict[l] += 1
@@ -38,7 +38,7 @@ def main():
             # print(file_path)
             file_hash = get_hash(file_path)
             # print(file_hash)
-            to_hist(file_hash)
+            to_dict(file_hash)
 
     pprint.pprint(let_dict)
     print('Overall count: ', counter)
